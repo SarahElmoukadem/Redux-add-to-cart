@@ -11,3 +11,11 @@ export const REMOVE = (id) => {
         payload:id
     }
 }
+
+// remove individual item
+export const REMOVEITEM = (item) => {
+    return{
+        type:"REMOVE_ITEM",
+        payload:item
+    }
+}

@@ -31,7 +31,7 @@ const Header = () => {
   const total = () => {
     let price = 0;
     getdata.map((ele, k) => {
-      price = ele.price + price
+      price = ele.price * ele.qnty + price
     })
     setPrice(price);
   }
@@ -45,7 +45,7 @@ const Header = () => {
         <Container>
           <Navbar.Brand to="/" className="text-decoration-none text-light mx-3">Add to Cart</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link to="">Home</Nav.Link>
+            <Nav.Link to="/">Home</Nav.Link>
           </Nav>
           <Badge badgeContent={getdata.length} color="primary"
             id="basic-button"
@@ -83,7 +83,7 @@ const Header = () => {
                     {getdata.map((e) => {
                       return (
                         <>
-                          <tr>
+                          <tr key={e.id}>
                             <td>
                               <NavLink to={`/cart/${e.id}`}
                                 onClick={handleClose}

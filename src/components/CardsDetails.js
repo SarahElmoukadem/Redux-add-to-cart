@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Table from 'react-bootstrap/Table'
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import {REMOVE} from "../redux/actions/action";
+import { REMOVE, ADD, REMOVEITEM } from "../redux/actions/action";
 
 const CardsDetails = () => {
 
@@ -15,12 +15,18 @@ const CardsDetails = () => {
   const history = useNavigate()
 
   const dispatch = useDispatch();
+
+  const getdata = useSelector((state) => state.cartreducer.carts);
+  console.log(getdata);
+
   const remove = (id) => {
     dispatch(REMOVE(id))
     history("/")
   }
-  const getdata = useSelector((state) => state.cartreducer.carts);
-  console.log(getdata);
+  // Remove item
+  const removeItem = (item) => {
+    dispatch(REMOVEITEM(item))
+  }
 
   const compare = () => {
     let comparedata = getdata.filter((e) => {
@@ -29,6 +35,12 @@ const CardsDetails = () => {
     console.log(comparedata);
     setData(comparedata);
   }
+
+  const send = (e) => {
+    // console.log(e)
+    dispatch(ADD(e))
+  }
+
 
   useEffect(() => {
     compare();
@@ -83,8 +95,30 @@ const CardsDetails = () => {
                             <strong>
                               Total:
                             </strong>
-                            300
+                            {ele.price * ele.qnty}
                           </p>
+
+                          <div
+                            style={{ width: 100, cursor: "pointer", background: "#ddd", color: "#111" }}
+                            className="mt-5 d-flex justify-content-between align-items-center">
+
+
+                            <span
+                              onClick={ele.qnty <= 1 ? ()=>remove(ele.id) : ()=>removeItem(ele)}
+                              style={{ fontSize: 24 }}>
+                              -
+                            </span>
+
+                            <span style={{ fontSize: 22 }}>
+                              {ele.qnty}
+                            </span>
+
+
+                            <span style={{ fontSize: 24 }} onClick={() => send(ele)}>
+                              +
+                            </span>
+
+                          </div>
 
                         </td>
 
@@ -108,7 +142,7 @@ const CardsDetails = () => {
                           </p>
 
 
-                          <p onClick={()=>remove(ele.id)}>
+                          <p onClick={() => remove(ele.id)}>
                             <strong>
                               Remove:
                             </strong>

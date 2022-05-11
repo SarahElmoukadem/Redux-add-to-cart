@@ -25,8 +25,7 @@ const Cards = () => {
         {
           data.map((element, id) => {
             return (
-              <>
-                <Card key={id} style={{ width: '22rem', border: "none" }} className="mx-2 mt-4 card_style">
+                <Card key={element.id} style={{ width: '22rem', border: "none" }} className="mx-2 mt-4 card_style">
                   <Card.Img variant="top"
                     src={element.imgdata}
                     style={{ height: "16rem", objectFit: "cover" }}
@@ -48,7 +47,6 @@ const Cards = () => {
                     </div>
                   </Card.Body>
                 </Card>
-              </>
             )
           })
         }
