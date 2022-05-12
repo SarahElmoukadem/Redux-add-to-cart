@@ -43,9 +43,9 @@ const Header = () => {
     <>
       <Navbar bg="dark" variant="dark" style={{ height: "60px" }}>
         <Container>
-          <Navbar.Brand to="/" className="text-decoration-none text-light mx-3">Add to Cart</Navbar.Brand>
+          <NavLink to="/" className="text-decoration-none text-light mx-3">Add to Cart</NavLink>
           <Nav className="me-auto">
-            <Nav.Link to="/">Home</Nav.Link>
+            <NavLink to="/">Home</NavLink>
           </Nav>
           <Badge badgeContent={getdata.length} color="primary"
             id="basic-button"
