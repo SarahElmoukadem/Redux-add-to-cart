@@ -45,7 +45,7 @@ const Header = () => {
         <Container>
           <NavLink to="/" className="text-decoration-none text-light mx-3">Add to Cart</NavLink>
           <Nav className="me-auto">
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" className="text-decoration-none text-light">Home</NavLink>
           </Nav>
           <Badge badgeContent={getdata.length} color="primary"
             id="basic-button"
