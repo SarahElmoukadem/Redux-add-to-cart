@@ -96,6 +96,9 @@ const Header = () => {
                             </td>
 
                             <td>
+                              <NavLink to={`/cart/${e.id}`}
+                                onClick={handleClose}
+                              >
                               <p>
                                 {e.rname}
                               </p>
@@ -107,7 +110,7 @@ const Header = () => {
                               <p>
                                 Quantity: {e.qnty}
                               </p>
-
+ </NavLink>
                               <p
                                 onClick={() => remove(e.id)}
                                 style={{ color: "red", fontSize: 20, cursor: "pointer" }}>
