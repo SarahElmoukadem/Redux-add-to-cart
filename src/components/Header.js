@@ -98,6 +98,7 @@ const Header = () => {
                             <td>
                               <NavLink to={`/cart/${e.id}`}
                                 onClick={handleClose}
+                                className="text-decoration-none text-dark"
                               >
                               <p>
                                 {e.rname}
