@@ -19,7 +19,7 @@ const Cards = () => {
   return (
     <div className="container mt-3">
       <h2 className="text-center">
-        Add to cart Projects
+        Restaurant
       </h2>
       <div className="row d-flex justify-content-center align-items-center">
         {
