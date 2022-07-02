@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
-import Card from 'react-bootstrap/Card'
-import CardsData from './CardsData'
-import Button from 'react-bootstrap/Button'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
+import CardsData from './CardsData';
+import Button from 'react-bootstrap/Button';
 import './style.css';
 import { useDispatch } from 'react-redux';
 import { ADD } from '../redux/actions/action';
@@ -25,6 +26,7 @@ const Cards = () => {
         {
           data.map((element, id) => {
             return (
+              <Link to={`/cart/${e.id}`}>
                 <Card key={element.id} style={{ width: '22rem', border: "none" }} className="mx-2 mt-4 card_style">
                   <Card.Img variant="top"
                     src={element.imgdata}
@@ -47,6 +49,7 @@ const Cards = () => {
                     </div>
                   </Card.Body>
                 </Card>
+                </Link>
             )
           })
         }
