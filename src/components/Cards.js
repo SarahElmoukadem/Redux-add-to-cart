@@ -9,7 +9,7 @@ import { ADD } from '../redux/actions/action';
 const Cards = () => {
 
   const [data, setData] = useState(CardsData);
-  console.log(data);
+
 
   const dispatch = useDispatch();
   const send = (e) => {
