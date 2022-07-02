@@ -26,8 +26,10 @@ const Cards = () => {
         {
           data.map((element, id) => {
             return (
-              <Link to={`/cart/${e.id}`}>
+        
                 <Card key={element.id} style={{ width: '22rem', border: "none" }} className="mx-2 mt-4 card_style">
+      <Link to={`/cart/${e.id}`}>
+
                   <Card.Img variant="top"
                     src={element.imgdata}
                     style={{ height: "16rem", objectFit: "cover" }}
@@ -39,7 +41,12 @@ const Cards = () => {
                     <Card.Text>
                       Price : {element.price} $
                     </Card.Text>
-                    <div className="button_div d-flex justify-content-center">
+
+              
+                  </Card.Body>
+</Link>
+
+      <div className="button_div d-flex justify-content-center">
                       <Button variant="primary"
                         className="w-100"
                         onClick={() => send(element)}
@@ -47,9 +54,8 @@ const Cards = () => {
                         Add to Cart
                       </Button>
                     </div>
-                  </Card.Body>
                 </Card>
-                </Link>
+                
             )
           })
         }
