@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import CardsData from './CardsData';
 import Button from 'react-bootstrap/Button';
@@ -28,7 +27,7 @@ const Cards = () => {
             return (
         
                 <Card key={element.id} style={{ width: '22rem', border: "none" }} className="mx-2 mt-4 card_style">
-      <Link to={`/cart/${element.id}`}>
+
 
                   <Card.Img variant="top"
                     src={element.imgdata}
@@ -44,7 +43,7 @@ const Cards = () => {
 
               
                   </Card.Body>
-</Link>
+
 
       <div className="button_div d-flex justify-content-center">
                       <Button variant="primary"
